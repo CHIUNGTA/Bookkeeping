@@ -7,8 +7,10 @@ namespace bookkeeping2.Models
 {
     public class Myclass
     { 
+        public Guid Id { get; set; }
         public string Type { get; set; }
-        public int Money{ get; set; }
-        public DateTime Date { get; set; }
+        public string Money{ get; set; }
+        public string Date { get; set; }
+        public string Remarks { get; set; }
     }
 }
