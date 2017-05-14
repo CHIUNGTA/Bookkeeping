@@ -61,6 +61,7 @@ namespace bookkeeping2.Controllers
                     類型 = "支出";
                 }
                 ram.Type = 類型.ToString();
+                ram.Remarks =(i.Remarkkk.Length>3)? i.Remarkkk.Substring(0,3):"我是地雷";
                 model.Add(ram);
                 }
             return View(model);

@@ -12,10 +12,10 @@ namespace bookkeeping2.Models
         {
         }
 
-        public virtual DbSet<AccountBook> AccountBook { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+        public virtual DbSet<AccountBook> AccountBook { get; set; }
     }
 }
