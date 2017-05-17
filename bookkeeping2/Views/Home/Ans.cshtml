@@ -1,0 +1,44 @@
+﻿@model  IEnumerable<bookkeeping2.Models.Myclass>
+@{
+    ViewBag.Title = "Ans";
+}
+
+@*<h2>Ans</h2>*@
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover" id="yyy">
+            <tr>
+                <th id="tt">ID</th>
+                <th>類別</th>
+                <th>日期</th>
+                <th>金額</th>
+                <th>備註</th>
+            </tr>
+
+            @{ int i = 0;
+                foreach (var item in Model)
+                {
+
+                    i += 1;
+                    <tr>
+                        <td>@i</td>
+                        @if (@item.Type == "收入")
+                        {
+                            <td class="success" style="color:blue;">@item.Type</td>
+
+                        }
+                        else
+                        {
+                            <td class="warning" style="color:red;">@item.Type</td>
+                        }
+                        <td>@item.Date</td>
+                        <td>@item.Money</td>
+                        <td>@item.Remarks</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
+

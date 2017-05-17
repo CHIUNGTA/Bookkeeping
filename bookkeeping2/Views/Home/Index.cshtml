@@ -1,9 +1,9 @@
-﻿@model  IEnumerable<bookkeeping2.Models.Myclass>
+﻿@model bookkeeping2.Models.AccountBook
 @{
     ViewBag.Title = "Home Page";
 }
 
-<div class="well">
+@*<div class="well">
     <form class="form-horizontal">
         <div class="form-group">
             <label for="category" class="col-sm-2 control-label">類別</label>
@@ -39,9 +39,60 @@
             </div>
         </div>
     </form>
-</div>
+</div>*@
 
-<div class="row">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>炯達記帳本</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Categoryyy,"類型", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Categoryyy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Categoryyy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amounttt,"金額", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Amounttt, new { htmlAttributes = new {@class = "form-control"}  })
+                @Html.ValidationMessageFor(model => model.Amounttt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Dateee,"日期", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Dateee, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Dateee, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Remarkkk,"備註", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Remarkkk, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Remarkkk, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="新增" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@Html.Action("Ans");
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@*<div class="row">
     <div class="col-md-12">
         <table class="table table-bordered table-hover" id="yyy">
             <tr>
@@ -75,7 +126,10 @@
             }
         </table>
             </div>
-</div>
+</div>*@
+
+
+
 @*@section javaadd{
     <script type="text/javascript">
         $("#enterdata").on("click", function () {

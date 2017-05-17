@@ -273,6 +273,12 @@
     <Content Include="Views\AccountBooks\Details.cshtml" />
     <Content Include="Views\AccountBooks\Edit.cshtml" />
     <Content Include="Views\AccountBooks\Index.cshtml" />
+    <Content Include="Views\Home\Ans.cshtml" />
+    <Content Include="Views\AccountBooks1\Create.cshtml" />
+    <Content Include="Views\AccountBooks1\Delete.cshtml" />
+    <Content Include="Views\AccountBooks1\Details.cshtml" />
+    <Content Include="Views\AccountBooks1\Edit.cshtml" />
+    <Content Include="Views\AccountBooks1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
